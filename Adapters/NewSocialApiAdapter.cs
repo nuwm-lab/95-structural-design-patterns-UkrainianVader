@@ -18,10 +18,10 @@ namespace LabWork.Adapters
             _client.PublishPost(message);
         }
 
-        public string[] GetRecentPosts(int count)
+        public System.Collections.Generic.IReadOnlyList<string> GetRecentPosts(int count)
         {
             var posts = _client.FetchPosts(count);
-            return posts.ToArray();
+            return posts.ToList();
         }
     }
 }

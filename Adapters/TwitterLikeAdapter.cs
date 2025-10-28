@@ -17,9 +17,9 @@ namespace LabWork.Adapters
             _api.SendTweet(message);
         }
 
-        public string[] GetRecentPosts(int count)
+        public System.Collections.Generic.IReadOnlyList<string> GetRecentPosts(int count)
         {
-            return _api.GetTimeline(count).ToArray();
+            return _api.GetTimeline(count).ToList();
         }
     }
 }

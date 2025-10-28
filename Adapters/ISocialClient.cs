@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace LabWork.Adapters
 {
     public interface ISocialClient
@@ -5,7 +7,7 @@ namespace LabWork.Adapters
         // Відправити пост/повідомлення
         void Post(string message);
 
-        // Отримати останні пости (масив рядків для простоти)
-        string[] GetRecentPosts(int count);
+        // Отримати останні пости. Використовуємо IReadOnlyList для гнучкості реалізацій
+        IReadOnlyList<string> GetRecentPosts(int count);
     }
 }
